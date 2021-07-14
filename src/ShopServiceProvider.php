@@ -17,7 +17,8 @@ class ShopServiceProvider extends ServiceProvider
 			__DIR__."/Views"=>resource_path("views/vendor/shopviews")
 		]);
 
-  
+     $this->loadMigrationsFrom(__DIR__."/migrations");
+     
 
 	}
 
