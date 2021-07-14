@@ -2,6 +2,7 @@
 namespace Novapex\Shop\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Novapex\Shop\Model\Shop;
 
 class shopController extends Controller
 {
@@ -35,6 +36,16 @@ class shopController extends Controller
     public function store(Request $request)
     {
         //
+      $shop =  Shop::create([
+ 
+     "productname"=>$request->productname,
+     "stockno"=>$request->stockno
+       ]);
+
+      if($shop)
+        echo "inserted";
+    else
+        echo "not inserted";
     }
 
     /**

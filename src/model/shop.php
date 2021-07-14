@@ -1,10 +1,10 @@
 <?php
 
-namespace Novapex\Shop;
+namespace Novapex\Shop\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class shop extends Model
 {
 	
 	protected $guarded =[];
