@@ -1,0 +1,8 @@
+{
+    "name": "novapex/shop",
+    "description": "laravel shop package",
+    "type": "laravel",
+    "license": "mit",
+    "minimum-stability": "dev",
+    "require": {}
+}
