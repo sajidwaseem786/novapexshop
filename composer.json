@@ -6,3 +6,42 @@
     "minimum-stability": "dev",
     "require": {}
 }
+
+{
+    "name": "novapex/shop",
+    "description": "laravel shop package",
+    
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sajid Waseem",
+            "email": "sajidwaseem7860@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "Novapex\\Shop\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Novapex\\Shop\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "laravel": {
+            "providers": [
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "suggest": {
+    }
+}
