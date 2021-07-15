@@ -1,11 +1,13 @@
 <?php
 namespace Novapex\Shop\Controllers;
+use novapex\Shop\Events\createdProduct;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Novapex\Shop\Model\Shop;
+use novapex\Shop\Model\Shop;
 
 class shopController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -36,14 +38,18 @@ class shopController extends Controller
     public function store(Request $request)
     {
         //
+    
       $shop =  Shop::create([
  
-     "productname"=>$request->productname,
-     "stockno"=>$request->stockno
+     "productname"=>$request->productname.rand(),
+     "stockno"=>$request->stockno.rand()
        ]);
 
-      if($shop)
+      if($shop){
+
+        event(new createdProduct($shop));
         echo "inserted";
+    }
     else
         echo "not inserted";
     }

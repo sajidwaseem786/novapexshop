@@ -10,12 +10,12 @@
 	"require-dev": {},
 	"autoload": {
 		"psr-4": {
-			"Novapex\\Shop\\": "src/"
+			"novapex\\Shop\\": "src/"
 		}
 	},
 	"autoload-dev": {
 		"psr-4": {
-			"Novapex\\Shop\\Tests\\": "tests/"
+			"novapex\\Shop\\Tests\\": "tests/"
 		}
 	},
 	"extra": {
