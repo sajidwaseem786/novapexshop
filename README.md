@@ -10,3 +10,5 @@
 9. ![image](https://user-images.githubusercontent.com/60508997/125780464-a895a941-d4bf-4bc9-8d2f-8e235c0f9534.png)
 10. After delete First product ![image](https://user-images.githubusercontent.com/60508997/125780527-54926300-9120-42b4-8227-49cc84b31490.png)
 11. php artisan vendor:publish;//for customize views
+12. ![image](https://user-images.githubusercontent.com/60508997/125788861-345c74d1-d5eb-4ed8-b7d2-6cfe970202d8.png)
+
