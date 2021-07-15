@@ -11,5 +11,6 @@
 10. After delete First product ![image](https://user-images.githubusercontent.com/60508997/125780527-54926300-9120-42b4-8227-49cc84b31490.png)
 11. php artisan vendor:publish;//for customize views
 12. ![image](https://user-images.githubusercontent.com/60508997/125789057-4f9bc188-5b06-46c8-a63a-95f62898e5fd.png)
+13. https://github.com/sajidwaseem786/novapexshop/commits/master
 
 
