@@ -16,7 +16,9 @@ class shopController extends Controller
     public function index()
     {
         //
-       return view('shopviews::home');
+        $products = Shop::paginate(5);
+      
+       return view('shopviews::show',compact('products'));
     }
 
     /**
@@ -27,6 +29,8 @@ class shopController extends Controller
     public function create()
     {
         //
+       return view('shopviews::home');
+
     }
 
     /**
@@ -38,7 +42,7 @@ class shopController extends Controller
     public function store(Request $request)
     {
         //
-    
+
       $shop =  Shop::create([
  
      "productname"=>$request->productname.rand(),
@@ -46,12 +50,12 @@ class shopController extends Controller
        ]);
 
       if($shop){
-
-        event(new createdProduct($shop));
-        echo "inserted";
+       event(new createdProduct($shop));
+        return back()->with("message","Product Inserted Successfully");
     }
     else
-        echo "not inserted";
+        return back()->with("message","Product Not Inserted Successfully");
+
     }
 
     /**
@@ -74,6 +78,10 @@ class shopController extends Controller
     public function edit($id)
     {
         //
+        $product= Shop::findOrFail($id);
+       return view('shopviews::edit',compact('product'));
+
+
     }
 
     /**
@@ -83,9 +91,16 @@ class shopController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         //
+// echo $request->input("productname");
+        $id = $request->input("id");
+        $product = Shop::findOrFail($id);
+        $product->productname = $request->input("productname");
+        $product->stockno=$request->input("stockno");
+       $product->update();
+       return redirect("shop")->with("message","product updated");
     }
 
     /**
@@ -97,5 +112,9 @@ class shopController extends Controller
     public function destroy($id)
     {
         //
+        // dd($id);
+        $product= Shop::findOrFail($id);
+        $product->delete();
+        return back()->with("message","product deleted");
     }
 }

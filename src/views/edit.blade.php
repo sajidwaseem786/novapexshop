@@ -20,16 +20,17 @@
           </div>
           @endif
         </div>
-  <form action="{{route('shop.store')}}" method="post" >
+  <form action="{{route('shop.update',$product)}}" method="post" >
   	@csrf
-  	@method('POST')
+  	@method('PUT')
+  	<input type="hidden" name="id" value="{{$product->id}}">
     <div class="form-group">
       <label for="email">Product Name:</label>
-      <input type="text" class="form-control" id="pname" placeholder="Enter product name" name="productname">
+      <input type="text" class="form-control" id="pname" placeholder="Enter product name" value="{{$product->productname}}" name="productname">
     </div>
     <div class="form-group">
       <label for="pwd">Stock No:</label>
-      <input type="text" class="form-control" id="pwd" placeholder="Enter stock" name="stockno">
+      <input type="text" class="form-control" id="pwd" value="{{$product->stockno}}" placeholder="Enter stock" name="stockno">
     </div>
     
     <button type="submit" class="btn btn-primary">Submit</button>
